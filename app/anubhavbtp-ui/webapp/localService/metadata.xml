@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="MyService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="BillionairsSet" EntityType="MyService.BillionairsSet"/>
+            </EntityContainer>
+            <EntityType Name="BillionairsSet">
+                <Key>
+                    <PropertyRef Name="rank"/>
+                </Key>
+                <Property Name="rank" Type="Edm.Int16" Nullable="false"/>
+                <Property Name="worth" Type="Edm.Decimal" Scale="2" Precision="10"/>
+                <Property Name="category" Type="Edm.String" MaxLength="256"/>
+                <Property Name="name" Type="Edm.String" MaxLength="120"/>
+                <Property Name="age" Type="Edm.Int16"/>
+                <Property Name="country" Type="Edm.String" MaxLength="120"/>
+                <Property Name="city" Type="Edm.String" MaxLength="120"/>
+                <Property Name="source" Type="Edm.String" MaxLength="120"/>
+                <Property Name="organization" Type="Edm.String" MaxLength="256"/>
+                <Property Name="gender" Type="Edm.String" MaxLength="2"/>
+                <Property Name="title" Type="Edm.String" MaxLength="80"/>
+                <Property Name="state" Type="Edm.String" MaxLength="120"/>
+                <Property Name="latitude" Type="Edm.Int32"/>
+                <Property Name="longitude" Type="Edm.Int32"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
