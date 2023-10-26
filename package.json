@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@cap-js/postgres": "^1.3.1",
     "@sap/cds": "^7",
     "express": "^4"
   },
@@ -17,6 +18,32 @@
   "scripts": {
     "start": "cds-serve",
     "watch-anubhavbtp-ui": "cds watch --open anubhavbtp-ui/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "[sqlite]": {
+        "db": {
+          "kind": "sqlite",
+          "impl": "@cap-js/sqlite",
+          "credentials": {
+            "url": "sqlite.db"
+          }
+        }
+      },
+      "[pg]": {
+        "db": {
+          "kind": "postgres",
+          "impl": "@cap-js/postgres",
+          "credentials": {
+            "host": "localhost",
+            "port": "5432",
+            "user": "postgres",
+            "password": "Welcome1",
+            "database": "postgres"
+          }
+        }
+      }
+    }
   },
   "sapux": [
     "app/anubhavbtp-ui"
