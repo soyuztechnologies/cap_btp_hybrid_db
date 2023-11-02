@@ -1,7 +1,9 @@
 # Getting Started
 
 Welcome to your new project.
-
+cf create-service postgresql-db trial mysql
+cf create-service-key mysql mysql-key
+cds bind --to mysql:mysql-key
 It contains these folders and files, following our recommended project layout:
 
 File or Folder | Purpose
